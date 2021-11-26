@@ -7,7 +7,7 @@ export interface Bookmarks {
   id: number,
   type: string,
   name: string,
-  tag: string
+  tag: string,
 }
 
 @Injectable({

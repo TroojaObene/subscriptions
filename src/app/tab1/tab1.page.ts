@@ -13,7 +13,4 @@ export class Tab1Page implements OnInit {
   ngOnInit() {
     this.bookmarks = this.bookmarksService.askBookmarks();
   }
-  openVideo(j) {
-    window.open(j.url);
-  }
 }
