@@ -1,7 +1,7 @@
 export const environment = {
 
   production: true,
-  firebaseConfig: {
+  firebase: {
     apiKey: "AIzaSyBoDPXP5iMYTExl_tcnELVdn4N8vvpQcEA",
     authDomain: "subscription-reminder-f4e80.firebaseapp.com",
     projectId: "subscription-reminder-f4e80",

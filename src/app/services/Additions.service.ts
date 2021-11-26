@@ -5,9 +5,9 @@ import { Observable } from 'rxjs';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 export interface Additions {
-  type: string,
   name: string,
-  image: string
+  type: string,
+  payment_frequency: number
 }
 
 @Injectable({

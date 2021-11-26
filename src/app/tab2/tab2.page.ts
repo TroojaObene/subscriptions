@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdditionsService, Additions } from 'src/app/services/Additions.service';
+import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab2',
@@ -10,22 +10,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab2Page implements OnInit {
   public additions: Observable<Additions[]>
-  constructor(private additionsService: AdditionsService) { }
+  public reminders: Observable<Reminders[]>
+  constructor(private additionsService: AdditionsService, private remindersService: RemindersService) { }
+
 
   ngOnInit() {
     this.additions = this.additionsService.askAdditions();
   }
-  /**
-    addReminder() {
-      var name = (<HTMLInputElement>document.getElementById("Name")).value;
-      var type = (<HTMLInputElement>document.getElementById("Type")).value;
-      console.log("salvestatud");
-      this.additionsService.addAdditions({
-        type: type,
-        name: name,
-        image: null
-      });
-    }
-    **/
+
+  addReminder(a) {
+    this.remindersService.addReminders({
+      name: a.name,
+      type: a.id,
+      start_date: null,
+      payment_date: 10,
+      payment_frequency: a.payment_frequency,
+      end_date: null,
+      user_id: "user"
+    });
+  }
+
 }
 

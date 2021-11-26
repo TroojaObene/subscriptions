@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
 import { map, take, timestamp } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 export interface Reminders {
+  name: string,
   type: string,
-  name: string
+  start_date: any,
+  payment_date: number,
+  payment_frequency: number,
+  end_date: number,
+  user_id: string
 }
 
 @Injectable({
