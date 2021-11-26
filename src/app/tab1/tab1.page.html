@@ -6,11 +6,11 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let bookmarks of (bookmarks | async)">
-      <ion-card>
+    <ion-item *ngFor="let Reminders of (reminders | async)">
+      <ion-card button="true">
         <ion-card-content>
-          <ion-text>{{bookmarks.title}}</ion-text>
-          <br />
+          <ion-text>Name: {{Reminders.name}}</ion-text><br />
+          <ion-text>Type: {{Reminders.type}}</ion-text><br />
         </ion-card-content>
       </ion-card>
     </ion-item>

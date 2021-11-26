@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BookmarksService, Bookmarks } from 'src/app/services/bookmarks.service';
+import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
 import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-tab1',
@@ -8,9 +9,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
-  private bookmarks: Observable<Bookmarks[]>
-  constructor(private bookmarksService: BookmarksService) { }
+  public reminders: Observable<Reminders[]>
+  constructor(private remindersService: RemindersService) { }
   ngOnInit() {
-    this.bookmarks = this.bookmarksService.askBookmarks();
+    this.reminders = this.remindersService.askReminders();
   }
 }

@@ -3,15 +3,48 @@
     <ion-title class="ion-text-center"> Add Subscriptions </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let bookmarks of (bookmarks | async)">
-      <ion-card>
-        <ion-card-content>
-          <ion-text>{{bookmarks.name}}</ion-text>
-          <br />
-        </ion-card-content>
-      </ion-card>
+    <ion-item *ngFor="let additions of (additions | async)">
+      <ion-button> {{additions.type}} </ion-button>
     </ion-item>
   </ion-list>
+
+  <!-- Textarea in an item with a placeholder
+  <ion-item>
+    <ion-label
+      position="floating"
+      enterkeyhint="next"
+      maxlength="25"
+      inputmode="text"
+      name="Name"
+      id="Name"
+      required
+    >
+      Name
+    </ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label
+      position="floating"
+      enterkeyhint="next"
+      maxlength="25"
+      inputmode="text"
+      name="Type"
+      id="Type"
+      required
+    >
+      Type
+    </ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+
+  <ion-button color="success" expand="full" (click)="addReminder">
+    <ion-icon slot="start" name="send"></ion-icon>
+    Send
+  </ion-button>
+-->
 </ion-content>
