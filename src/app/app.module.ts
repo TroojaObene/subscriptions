@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { StatusBar } from '@capacitor/status-bar';
 
 @NgModule({
   declarations: [AppComponent],
