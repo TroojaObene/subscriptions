@@ -31,6 +31,8 @@
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-datepicker": "^0.9.3",
     "dateformat": "^5.0.2",
+    "json-schema": "^0.4.0",
+    "nth-check": "^2.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
