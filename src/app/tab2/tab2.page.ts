@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdditionsService, Additions } from 'src/app/services/Additions.service';
 import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
 import { Observable } from 'rxjs';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-tab2',
@@ -11,6 +12,7 @@ import { Observable } from 'rxjs';
 export class Tab2Page implements OnInit {
   public additions: Observable<Additions[]>
   public reminders: Observable<Reminders[]>
+  dd: number;
   constructor(private additionsService: AdditionsService, private remindersService: RemindersService) { }
 
 
@@ -19,14 +21,17 @@ export class Tab2Page implements OnInit {
   }
 
   addReminder(a) {
+    let now = new Date();
+    let today = formatDate(now, 'dd.MM.yyyy', 'en-US');
+    let dd = String(now.getDate()).padStart(2, '0');
+    let ddnum = parseInt(dd);
     this.remindersService.addReminders({
       name: a.name,
       type: a.id,
-      start_date: null,
-      payment_date: 10,
+      start_date: today,
+      payment_date: ddnum,
       payment_frequency: a.payment_frequency,
-      end_date: null,
-      user_id: "user"
+      end_date: null
     });
   }
 
