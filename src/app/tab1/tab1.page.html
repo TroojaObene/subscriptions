@@ -9,14 +9,26 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let Reminders of reminders |  async">
-      <ion-card button="true" style="width: 95%" class="ion-text-center">
+    <ion-item *ngFor="let Reminder of reminders |  async">
+      <ion-card button="true" (click)="getDetails(Reminder)" style="width: 95%" class="ion-text-center">
         <ion-card-content>
-          <ion-text>Name: {{Reminders.name}}</ion-text><br />
-          <ion-text>Type: {{Reminders.type}}</ion-text><br />
-          <ion-text>start: {{Reminders.start_date}}</ion-text><br />
-          <ion-text>Freq.: {{Reminders.payment_frequency}}</ion-text><br />
-          <ion-text>end: {{Reminders.end_date}}</ion-text><br />
+          <ion-list lines="none">
+            <ion-item>
+              <ion-text>{{Reminder.name}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text>start: {{Reminder.start_date}}</ion-text><br />
+            </ion-item>
+            <ion-item>
+              <ion-text>Freq: {{Reminder.payment_frequency}}</ion-text><br />
+            </ion-item>
+            <ion-item>
+              <ion-text>end: {{Reminder.end_date}}</ion-text><br />
+            </ion-item>
+            <ion-item>
+              <ion-text>payment date: {{Reminder.payment_date}}</ion-text><br />
+            </ion-item>
+          </ion-list>
         </ion-card-content>
       </ion-card>
     </ion-item>
