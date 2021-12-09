@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -8,15 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
   reminder: any;
-  constructor() { }
-
-  ngOnInit() {
-    this.reminder = JSON.parse(sessionStorage.getItem("reminder"));
-    console.log(this.reminder);
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => console.log(params));
   }
 
-  ngOnDestroy() {
-    this.reminder = ""
+  ngOnInit() {
   }
 
 }

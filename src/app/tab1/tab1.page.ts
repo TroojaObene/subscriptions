@@ -17,7 +17,7 @@ export class Tab1Page implements OnInit {
 
   getDetails(reminder) {
     sessionStorage.setItem("reminder", JSON.stringify(reminder))
-    this.route.navigate(['/tabs/details']);
+    this.route.navigate(['/tabs/details/', reminder.id]);
   }
 }
 
