@@ -31,6 +31,16 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
+      },
+      {
+        path: 'details',
+        redirectTo: '/tabs/tab1',
+        pathMatch: 'full'
+      },
+      {
+        path: 'edit',
+        redirectTo: '/tabs/tab1',
+        pathMatch: 'full'
       }
     ]
   },
