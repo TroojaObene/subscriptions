@@ -38,13 +38,16 @@ export class RemindersService {
   addReminders(reminders: Reminders): Promise<DocumentReference> {
     return this.remindersCollection.add(reminders);
   }
+  //updateReminder(_id: string, _cell: string, _value: string) {
+  //  let doc = this.afs.collection('Reminders', ref => ref.where('id', '==', _id));
+  //  doc.snapshotChanges().subscribe((res: any) => {
+  //    let id = res[0].payload.doc.id;
+  //    this.afs.collection('Reminders').doc(id).update({ _cell: _value });
+  //  });
+  //}
   updateReminder(_id: string, _cell: string, _value: string) {
-    let doc = this.afs.collection('Reminders', ref => ref.where('id', '==', _id));
-    doc.snapshotChanges().subscribe((res: any) => {
-      let id = res[0].payload.doc.id;
-      this.afs.collection('Reminders').doc(id).update({ _cell: _value });
-    });
-  }
+    this.afs.collection('Reminders').doc(_id).update({ _cell: _value });
+  };
   askReminder(id) {
     this.reminder = this.remindersCollection.doc(id);
     return this.reminder;
