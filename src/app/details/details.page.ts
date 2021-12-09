@@ -8,9 +8,8 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
-  reminder: any;
   constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(params => console.log(params));
+    this.route.params.subscribe(id => console.log(id));
   }
 
   ngOnInit() {
