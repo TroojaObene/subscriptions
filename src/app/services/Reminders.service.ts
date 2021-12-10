@@ -23,7 +23,7 @@ export class RemindersService {
 
   constructor(private afs: AngularFirestore) {
     //this.remindersCollection = this.afs.collection<Reminders>('/Reminders', ref => ref.where('end_date', '', '0'));
-    this.remindersCollection = this.afs.collection<Reminders>('Reminders');
+    this.remindersCollection = this.afs.collection<Reminders>('Reminders', ref => ref.where('end_date', '==', null));
     this.reminders = this.remindersCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
