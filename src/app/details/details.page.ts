@@ -15,7 +15,9 @@ export class DetailsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(id => { console.log(id.id) });
+    this.remindersService.askReminder(this.route.params.subscribe(id => { return id.id }))
+    this.route.params.subscribe(id => { return id.id });
+    //this.route.params.subscribe(id => { console.log(id.id) });
   }
 
 }

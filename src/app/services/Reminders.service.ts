@@ -51,8 +51,8 @@ export class RemindersService {
   removeReminder(_id: string) {
     this.afs.collection('Reminders').doc(_id).update({ end_date: Date() });
   };
-  askReminder(id) {
-    this.reminder = this.remindersCollection.doc(id);
+  askReminder(_id) {
+    this.remindersCollection.doc(_id);
     return this.reminder;
   }
 }
