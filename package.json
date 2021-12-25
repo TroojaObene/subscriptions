@@ -27,6 +27,7 @@
     "@capacitor/status-bar": "1.0.5",
     "@ionic-native/date-picker": "^5.36.0",
     "@ionic/angular": "^5.5.2",
+    "ansi-html": "^0.0.7",
     "cordova-android": "9.1.0",
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-datepicker": "^0.9.3",
