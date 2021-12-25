@@ -20,28 +20,35 @@ export interface Reminders {
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
-  reminder: Observable<Reminders[]>;
-  remindersCollection: AngularFirestoreCollection<Reminders>;
+  reminder: any;
+  remindersCollection: any;
   param: any;
   constructor(private route: ActivatedRoute, private afs: AngularFirestore) {
     this.route.params.forEach(param => this.param = param['id'])
-    this.remindersCollection = this.afs.collection<Reminders>('Reminders', ref => ref.where('id', '==', 'sy2nXTZODujeZ5MLFVLd'));
-    this.reminder = this.remindersCollection.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
-          return { id, ...data }
-        });
-      })
-    );
+    this.remindersCollection = this.afs.collection('Reminders');
   }
 
   askReminders(): Observable<Reminders[]> { return this.reminder; }
 
+  getDoc(id: string) {
+    //return (this.remindersCollection.doc(id).get().then(snapshot => { const reminder = snapshot.data }));
+    //this.afs.collection('Reminders').doc(id).get().then(snapshot => { return snapshot.data });
+  }
+
   ngOnInit() {
-    console.log(this.askReminders())
-    console.log(this.route.params.subscribe(id => { return id }))
+    this.afs.collection('Reminders')
+      .doc(this.param)
+      .get()
+      .subscribe(snapshot => {
+        const reminder = snapshot.data
+      });
+
+
+    //    this.reminder = this.getDoc(this.param)
+    //console.log(this.reminder);
+    //console.log(this.param);
+    //console.log(this.getDoc(this.param))
+    //console.log(this.remindersCollection.doc(this.param).get);
   }
 
 }
