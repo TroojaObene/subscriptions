@@ -7,6 +7,8 @@ import { Params } from '@angular/router';
 export interface Reminders {
   name: string,
   type: string,
+  company: string,
+  logo: string,
   start_date: any,
   payment_date: number,
   payment_frequency: number,
