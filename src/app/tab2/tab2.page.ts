@@ -3,7 +3,6 @@ import { AdditionsService, Additions } from 'src/app/services/Additions.service'
 import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
 import { Observable } from 'rxjs';
 import { formatDate } from '@angular/common';
-import { join } from 'path';
 
 @Component({
   selector: 'app-tab2',
@@ -26,7 +25,7 @@ export class Tab2Page implements OnInit {
     let today = formatDate(now, 'dd.MM.yyyy', 'en-US');
     let dd = String(now.getDate()).padStart(2, '0');
     let ddnum = parseInt(dd);
-    let logo = join("https://logo.clearbit.com/", a.company)
+    let logo = "https://logo.clearbit.com/" + a.company
     this.remindersService.addReminders({
       name: a.name,
       type: a.id,
