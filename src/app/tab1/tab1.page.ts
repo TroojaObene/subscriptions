@@ -15,8 +15,5 @@ export class Tab1Page implements OnInit {
     this.reminders = this.remindersService.askReminders();
   }
 
-  getDetails(reminder) {
-    this.route.navigate(['/tabs/details/', reminder.id]);
-  }
 }
 
