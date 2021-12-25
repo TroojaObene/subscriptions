@@ -53,6 +53,9 @@ export class RemindersService {
   removeReminder(_id: string) {
     this.firebase.collection('Reminders').doc(_id).update({ end_date: Date() });
   };
+  nameReminder(_id: string, _name: string) {
+    this.firebase.collection('Reminders').doc(_id).update({ name: _name });
+  };
   askReminder(_id) {
     this.remindersCollection.doc(_id);
     return this.reminder;
