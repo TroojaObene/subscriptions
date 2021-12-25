@@ -1,6 +1,8 @@
 .card_base {
   width: 95%;
   display: flex;
+  display: inline-block;
+  *display: inline;
 }
 
 .card_title {
@@ -13,4 +15,13 @@
   color: white;
   text-align: right;
   float: right;
+}
+
+.card_remove {
+  text-align: right;
+  float: right;
+}
+
+.card_remove_icon {
+  color: rgb(163, 32, 32);
 }
