@@ -18,8 +18,8 @@ export class AdditionsService {
   private additions: Observable<Additions[]>;
   private additionsCollection: AngularFirestoreCollection<Additions>;
 
-  constructor(private afs: AngularFirestore) {
-    this.additionsCollection = this.afs.collection<Additions>('Additions');
+  constructor(private firebase: AngularFirestore) {
+    this.additionsCollection = this.firebase.collection<Additions>('Additions');
     this.additions = this.additionsCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
