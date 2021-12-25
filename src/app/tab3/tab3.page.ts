@@ -14,4 +14,8 @@ export class Tab3Page implements OnInit {
   ngOnInit() {
     this.reminders = this.remindersService.askReminders();
   }
+
+  remove(a) {
+    this.remindersService.removeReminder(a.id)
+  }
 }
