@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵCompiler_compileModuleAndAllComponentsAsync__POST_R3__ } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdditionsService, Additions } from 'src/app/services/Additions.service';
 import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
 import { Observable } from 'rxjs';
