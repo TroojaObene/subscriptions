@@ -8,7 +8,7 @@
   <div>
     <ion-item *ngFor="let additions of (additions | async)" class="addition_item">
       <div (click)="addReminder(additions)">
-        <img src="https://logo.clearbit.com/{{additions.company}}" alt="{{additions.name}}" width="100" height="100" class="addition_image">
+        <img src="https://logo.clearbit.com/{{additions.company}}" alt="{{additions.name}}"  height="100" class="addition_image">
       </div>
     </ion-item>
   </div>

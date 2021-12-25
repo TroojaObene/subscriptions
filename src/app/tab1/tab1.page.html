@@ -12,14 +12,12 @@
     <ion-item *ngFor="let Reminder of reminders |  async">
       <ion-card class="card_base">
         <ion-card-content>
-          <ion-list lines="none">
             <ion-item class="card_title">
-              <ion-text>{{Reminder.name}}</ion-text>
+              <img src="{{Reminder.logo}}" alt="{{Reminder.name}}" height="75" class="title_image">
             </ion-item>
             <ion-item class="card_date">
               <ion-text>payment date: {{Reminder.payment_date}}</ion-text>
             </ion-item>
-          </ion-list>
         </ion-card-content>
       </ion-card>
     </ion-item>
