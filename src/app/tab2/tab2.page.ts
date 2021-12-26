@@ -29,7 +29,6 @@ export class Tab2Page implements OnInit {
     let logo = "https://logo.clearbit.com/" + a.company
     this.remindersService.addReminders({
       name: a.name,
-      type: a.id,
       company: a.company,
       logo: logo,
       start_date: today,
