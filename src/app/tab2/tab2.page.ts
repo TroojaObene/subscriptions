@@ -40,5 +40,8 @@ export class Tab2Page implements OnInit {
     this.route.navigate(['/tabs/tab1']);
   }
 
+  navAdd() {
+    this.route.navigate(['/tabs/tab2/add/'])
+  }
 }
 
