@@ -16,6 +16,7 @@ export class Tab3Page implements OnInit {
   }
 
   remove(a) {
-    this.remindersService.removeReminder(a.id)
+    this.remindersService.removeReminder(a.id);
+    this.route.navigate(['/tabs/tab1']);
   }
 }
