@@ -3,6 +3,7 @@ import { AdditionsService, Additions } from 'src/app/services/Additions.service'
 import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
 import { Observable } from 'rxjs';
 import { formatDate } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -13,7 +14,7 @@ export class Tab2Page implements OnInit {
   public additions: Observable<Additions[]>
   public reminders: Observable<Reminders[]>
   dd: number;
-  constructor(private additionsService: AdditionsService, private remindersService: RemindersService) { }
+  constructor(private additionsService: AdditionsService, private remindersService: RemindersService, private route: Router) { }
 
 
   ngOnInit() {
@@ -37,6 +38,7 @@ export class Tab2Page implements OnInit {
       end_date: null,
       cost: 0
     });
+    this.route.navigate(['/tabs/tab1']);
   }
 
 }
