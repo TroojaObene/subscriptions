@@ -31,7 +31,7 @@ export class Tab2Page implements OnInit {
       name: a.name,
       company: a.company,
       logo: logo,
-      start_date: today,
+      start_date: now,
       payment_date: ddnum,
       payment_frequency: a.payment_frequency,
       end_date: null,
