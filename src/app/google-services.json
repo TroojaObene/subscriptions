@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1017612429326",
+    "project_id": "subscription-reminder-f4e80",
+    "storage_bucket": "subscription-reminder-f4e80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017612429326:android:3fdfa12f740203db16745f",
+        "android_client_info": {
+          "package_name": "com.Trooja.reminders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017612429326-ahlodq59rv2vrcppfu8a3u68jb1a95e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvfpgvL7kdnMH1oRJJwpNawYRapkFSip8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017612429326-ahlodq59rv2vrcppfu8a3u68jb1a95e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
