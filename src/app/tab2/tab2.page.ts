@@ -34,7 +34,8 @@ export class Tab2Page implements OnInit {
       start_date: today,
       payment_date: ddnum,
       payment_frequency: a.payment_frequency,
-      end_date: null
+      end_date: null,
+      cost: 0
     });
   }
 

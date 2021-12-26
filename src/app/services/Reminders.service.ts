@@ -12,7 +12,8 @@ export interface Reminders {
   start_date: any,
   payment_date: number,
   payment_frequency: number,
-  end_date: number
+  end_date: number,
+  cost: number
 }
 
 @Injectable({
