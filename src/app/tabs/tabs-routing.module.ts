@@ -33,6 +33,14 @@ const routes: Routes = [
         path: 'edit',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
+      },
+      {
+        path: 'info',
+        loadChildren: () => import('../info/info.module').then(m => m.InfoPageModule)
+      },
+      {
+        path: 'add',
+        loadChildren: () => import('../add/add.module').then(m => m.AddPageModule)
       }
     ]
   },
