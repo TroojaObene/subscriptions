@@ -21,7 +21,6 @@ export interface Reminders {
 export class RemindersService {
   private reminders: Observable<Reminders[]>;
   private remindersCollection: AngularFirestoreCollection<Reminders>;
-  private reminder: AngularFirestoreDocument<Reminders>;
 
   constructor(private firebase: AngularFirestore) {
     //this.remindersCollection = this.firebase.collection<Reminders>('/Reminders', ref => ref.where('end_date', '', '0'));
@@ -39,14 +38,7 @@ export class RemindersService {
   askReminders(): Observable<Reminders[]> { return this.reminders; }
   addReminders(reminders: Reminders): Promise<DocumentReference> {
     return this.remindersCollection.add(reminders);
-  }
-  //updateReminder(_id: string, _cell: string, _value: string) {
-  //  let doc = this.firebase.collection('Reminders', ref => ref.where('id', '==', _id));
-  //  doc.snapshotChanges().subscribe((res: any) => {
-  //    let id = res[0].payload.doc.id;
-  //    this.firebase.collection('Reminders').doc(id).update({ _cell: _value });
-  //  });
-  //}
+  };
   updateReminder(_id: string, _cell: string, _value: string) {
     this.firebase.collection('Reminders').doc(_id).update({ _cell: _value });
   };
@@ -56,7 +48,13 @@ export class RemindersService {
   nameReminder(_id: string, _name: string) {
     this.firebase.collection('Reminders').doc(_id).update({ name: _name });
   };
-  askReminder(_id) {
+  askReminder2(_id: string) {
     return this.remindersCollection.doc(_id).get();
+  };
+  askReminder() {
+    const single = this.firebase.collection('Reminders').doc('pb9RuVTTyAjf6EZ21TFe').get().subscribe(value => { console.log(value) });
+    //console.log(single);
+    return single;
   }
+
 }
