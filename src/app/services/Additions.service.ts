@@ -7,7 +7,8 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 export interface Additions {
   name: string,
   payment_frequency: number,
-  company: string
+  company: string,
+  type: string
 }
 
 @Injectable({
