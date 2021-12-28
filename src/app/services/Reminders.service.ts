@@ -57,7 +57,6 @@ export class RemindersService {
     this.firebase.collection('Reminders').doc(_id).update({ name: _name });
   };
   askReminder(_id) {
-    this.remindersCollection.doc(_id);
-    return this.reminder;
+    return this.remindersCollection.doc(_id).get();
   }
 }
