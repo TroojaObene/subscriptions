@@ -1,11 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-item>
-      <ion-title class="ion-text-center"> Info </ion-title>
+      <ion-title class="ion-text-center"> Add </ion-title>
     </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+<ion-item>
+  <ion-label position="floating">company webpage</ion-label>
+  <ion-textarea id="webpage"></ion-textarea>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">company name</ion-label>
+  <ion-textarea id="type"></ion-textarea>
+</ion-item>
+<br>
+<ion-button color="success" expand="block" shape="round" (click)="save()">
+  <ion-icon slot="start" name="save"></ion-icon>
+  Save
+</ion-button>
+
+<!--
+<script>
+  if(document.getElementById("save").clicked == true){
+
+  let webpage = getElementById("webpage");
+  let type= getElementById("type");
+  this.additionsService.addAdditions({
+    company: getElementById("webpage"),
+    name: getElementById("type").toUpperCase(),
+    payment_frequency: 1,
+    type: getElementById("type")
+  });
+  this.route.navigate(['/tabs/tab2/']);
+  };
+</script>
+-->
 </ion-content>
