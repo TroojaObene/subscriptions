@@ -10,19 +10,18 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page implements OnInit {
   public reminders: Observable<Reminders[]>
-  public single: any;
   constructor(private remindersService: RemindersService, private route: Router) { }
   ngOnInit() {
     this.reminders = this.remindersService.askReminders();
-    this.single = this.remindersService.askReminder('pb9RuVTTyAjf6EZ21TFe');
-    //console.log(this.remindersService.askReminder());
-    console.log("final", this.single)
-
-    //this.single = { "id": "some_id", "name": "Toomas" }
   }
 
   navInfo() {
     this.route.navigate(['/tabs/info']);
+  }
+
+  getDetails(reminder) {
+    this.route.navigate(['/tabs/details', reminder.id]);
+    console.log("send", reminder)
   }
 
 }
