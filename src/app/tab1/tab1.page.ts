@@ -14,9 +14,9 @@ export class Tab1Page implements OnInit {
   constructor(private remindersService: RemindersService, private route: Router) { }
   ngOnInit() {
     this.reminders = this.remindersService.askReminders();
-    this.single = this.remindersService.askReminder();
+    this.single = this.remindersService.askReminder('pb9RuVTTyAjf6EZ21TFe');
     //console.log(this.remindersService.askReminder());
-    //console.log(this.single.name)
+    console.log("final", this.single)
 
     //this.single = { "id": "some_id", "name": "Toomas" }
   }
