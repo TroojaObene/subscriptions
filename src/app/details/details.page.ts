@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
+import { map, take, timestamp } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-details',
@@ -9,11 +11,16 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
-  constructor(private remindersService: RemindersService, private route: ActivatedRoute) { }
+  single: any;
+  param: string;
+  constructor(private remindersService: RemindersService, private route: ActivatedRoute) {
+    //this.route.params.forEach(param => console.log(param))
+  }
   ngOnInit() {
-    console.log(this.route.params.subscribe(params => { console.log(params.id) }));
+    //this.remindersService.askReminder(this.route.params.subscribe(id => { return id.id }))
+    //this.route.params.subscribe(id => { return id.id });
+    this.route.params.subscribe(id => { console.log(id.id) });
   }
 
 }
-
 
