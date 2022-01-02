@@ -16,6 +16,8 @@ export class Tab3Page implements OnInit {
   }
 
   remove(a) {
+    const alert = a.name + " has been removed"
+    window.alert(alert)
     this.remindersService.removeReminder(a.id);
     this.route.navigate(['/tabs/tab1']);
   }
