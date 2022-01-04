@@ -41,4 +41,3 @@ export class DetailsPage implements OnInit {
     this.router.navigate(['/tabs/tab1/']);
   }
 }
-
