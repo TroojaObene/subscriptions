@@ -37,7 +37,6 @@ export class RemindersService {
     );
   }
   askReminders(): Observable<Reminders[]> {
-    console.log("all reminders", this.reminders)
     return this.reminders;
   }
   addReminders(reminders: Reminders): Promise<DocumentReference> {
