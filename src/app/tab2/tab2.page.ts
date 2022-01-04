@@ -23,7 +23,7 @@ export class Tab2Page implements OnInit {
 
   addReminder(a) {
     let now = new Date();
-    let today = formatDate(now, 'dd.MM.yyyy', 'en-US');
+    let today = formatDate(now, 'dd-MM-yyyy', 'en-US');
     let dd = String(now.getDate()).padStart(2, '0');
     let ddnum = parseInt(dd);
     let logo = "https://logo.clearbit.com/" + a.company
@@ -31,7 +31,7 @@ export class Tab2Page implements OnInit {
       name: a.name,
       company: a.company,
       logo: logo,
-      start_date: now,
+      start_date: today,
       payment_date: ddnum,
       payment_frequency: a.payment_frequency,
       end_date: null,
