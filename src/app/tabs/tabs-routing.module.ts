@@ -46,6 +46,11 @@ const routes: Routes = [
         path: 'details/:id',
         loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule)
       }
+      ,
+      {
+        path: 'delete/:id',
+        loadChildren: () => import('../delete/delete.module').then(m => m.DeletePageModule)
+      }
     ]
   },
   {
