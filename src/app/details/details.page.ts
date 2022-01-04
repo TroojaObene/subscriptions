@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
+import { toDate } from 'date-fns';
 
 @Component({
   selector: 'app-details',
@@ -13,8 +14,7 @@ export class DetailsPage implements OnInit {
   sub
   single: any;
   DocReference: AngularFirestoreDocument;
-  constructor(private route: ActivatedRoute, private afs: AngularFirestore, private router: Router) {
-  }
+  constructor(private route: ActivatedRoute, private afs: AngularFirestore, private router: Router) { }
   ngOnInit() {
     this.single = {}
     this.Rem_id = this.route.snapshot.paramMap.get('id')
