@@ -11,15 +11,29 @@ import { Observable } from 'rxjs';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
-  single: any;
   param: string;
-  constructor(private remindersService: RemindersService, private route: ActivatedRoute) {
-    //this.route.params.forEach(param => console.log(param))
+  Rem_id: string;
+  sub
+  single: any;
+  DocReference: AngularFirestoreDocument;
+  constructor(private route: ActivatedRoute, private afs: AngularFirestore) {
   }
   ngOnInit() {
-    //this.remindersService.askReminder(this.route.params.subscribe(id => { return id.id }))
-    //this.route.params.subscribe(id => { return id.id });
-    this.route.params.subscribe(id => { console.log(id.id) });
+    this.single = {}
+    this.Rem_id = this.route.snapshot.paramMap.get('id')
+    console.log("Recive", this.Rem_id)
+    this.DocReference = this.afs.doc(`Reminders/${this.Rem_id}`)
+    this.sub = this.DocReference.valueChanges().subscribe(val => {
+      this.single = val
+    })
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe()
+  }
+
+  edit() {
+    console.log("edit ", this.Rem_id)
   }
 
 }

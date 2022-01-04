@@ -7,8 +7,18 @@
 </ion-header>
 
 <ion-content  [fullscreen]="true">
-  <ion-text>
-    ID: {{single.id}}
-    NAME: {{single.name}}
-  </ion-text>
+      <ion-card class="card_base">
+        <ion-card-content>
+            <ion-item class="card_title">
+              <img src="{{single.logo}}" height="75" class="title_image">
+            </ion-item>
+            <ion-item class="subs_name">
+              <ion-label>{{single.name}}</ion-label>
+            </ion-item>
+            <ion-item class="edit">
+              <ion-icon name="pencil" (click)="edit()"></ion-icon>
+            </ion-item>
+
+        </ion-card-content>
+      </ion-card>
 </ion-content>
