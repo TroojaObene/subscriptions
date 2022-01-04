@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { RemindersService, Reminders } from 'src/app/services/Reminders.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
-import { map, take, timestamp } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -16,7 +13,7 @@ export class DetailsPage implements OnInit {
   sub
   single: any;
   DocReference: AngularFirestoreDocument;
-  constructor(private route: ActivatedRoute, private afs: AngularFirestore) {
+  constructor(private route: ActivatedRoute, private afs: AngularFirestore, private router: Router) {
   }
   ngOnInit() {
     this.single = {}
@@ -33,8 +30,15 @@ export class DetailsPage implements OnInit {
   }
 
   edit() {
-    console.log("edit ", this.Rem_id)
+    this.router.navigate(['/tabs/edit/', this.Rem_id]);
   }
 
+  delete() {
+    this.router.navigate(['/tabs/delete/', this.Rem_id]);
+  }
+
+  back() {
+    this.router.navigate(['/tabs/tab1/']);
+  }
 }
 
