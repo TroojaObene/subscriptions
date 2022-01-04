@@ -1,0 +1,37 @@
+.card_base {
+  width: 95%;
+}
+
+.card_title {
+  color: white;
+  float: left;
+}
+
+.card_date {
+  color: white;
+  text-align: right;
+  float: right;
+}
+
+.title_image {
+  border-radius: 10px;
+}
+
+.edit {
+  float: right;
+  text-align: right;
+}
+
+.delete {
+  float: right;
+  text-align: right;
+}
+
+.subs_name {
+  text-align: left;
+  float: left;
+}
+
+.date {
+  display: inline;
+}
