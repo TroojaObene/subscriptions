@@ -14,7 +14,7 @@ export class AdditionPage implements OnInit {
   sub
   data: any;
   DocReference: AngularFirestoreDocument;
-
+  today
 
 
   constructor(private remindersService: RemindersService, private route: ActivatedRoute, private afs: AngularFirestore, private router: Router) { }
@@ -38,17 +38,18 @@ export class AdditionPage implements OnInit {
     let dd = String(now.getDate()).padStart(2, '0');
     let ddnum = parseInt(dd);
     let logo = "https://logo.clearbit.com/" + a.company
-    this.remindersService.addReminders({
-      name: a.name,
-      company: a.company,
-      logo: logo,
-      start_date: formatDate(now, 'MM-dd-yyyy', 'en-US'),
-      payment_date: ddnum,
-      payment_frequency: a.payment_frequency,
-      end_date: null,
-      cost: a.cost,
-      next_date: formatDate(now.setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
-    });
+    this.today = formatDate(now, 'MM-dd-yyyy', 'en-US'),
+      this.remindersService.addReminders({
+        name: a.name,
+        company: a.company,
+        logo: logo,
+        start_date: formatDate(now, 'MM-dd-yyyy', 'en-US'),
+        payment_date: ddnum,
+        payment_frequency: a.payment_frequency,
+        end_date: null,
+        cost: a.cost,
+        next_date: formatDate(now.setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
+      });
     this.router.navigate(['/tabs/tab1']);
   }
 
