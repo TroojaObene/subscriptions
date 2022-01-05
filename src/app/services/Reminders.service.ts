@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
-import { first, map, take, timestamp } from 'rxjs/operators';
+import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/compat/firestore';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Params } from '@angular/router';
 
 export interface Reminders {
   name: string,
@@ -22,10 +21,8 @@ export interface Reminders {
 export class RemindersService {
   private reminders: Observable<Reminders[]>;
   private remindersCollection: AngularFirestoreCollection<Reminders>;
-  private single: any;
 
   constructor(private firebase: AngularFirestore) {
-    //this.remindersCollection = this.firebase.collection<Reminders>('/Reminders', ref => ref.where('end_date', '', '0'));
     this.remindersCollection = this.firebase.collection<Reminders>('Reminders', ref => ref.where('end_date', '==', null));
     this.reminders = this.remindersCollection.snapshotChanges().pipe(
       map(actions => {
