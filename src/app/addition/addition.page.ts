@@ -52,4 +52,7 @@ export class AdditionPage implements OnInit {
     this.router.navigate(['/tabs/tab1']);
   }
 
+  back() {
+    this.router.navigate(['/tabs/tab2/']);
+  }
 }
