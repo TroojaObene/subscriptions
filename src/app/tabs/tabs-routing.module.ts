@@ -52,7 +52,7 @@ const routes: Routes = [
         loadChildren: () => import('../delete/delete.module').then(m => m.DeletePageModule)
       },
       {
-        path: 'addition/:id',
+        path: 'tab2/:id',
         loadChildren: () => import('../addition/addition.module').then(m => m.AdditionPageModule)
       }
     ]
