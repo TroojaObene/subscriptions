@@ -9,4 +9,30 @@
 
 <ion-content [fullscreen]="true">
 
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-textarea [(ngModel)]="name" inputmode="text" value="{{data.name}}" required=true></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Cost</ion-label>
+    <ion-textarea [(ngModel)]="cost" inputmode="decimal" value="{{data.cost}}" required=true></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Start date</ion-label>
+    <ion-datetime [(ngModel)]="date" max="{{today}}" value="{{today}}" required=true></ion-datetime>
+  </ion-item>
+
+  <div class="actions">
+    <ion-button color="medium" expand="block" shape="round" (click)="back()" class="back">
+      <ion-icon slot="start" name="arrow-undo"></ion-icon>
+      Back
+    </ion-button>
+    <ion-button color="success" expand="block" shape="round" (click)="save()" class="save">
+      <ion-icon slot="start" name="save"></ion-icon>
+      Add
+    </ion-button>
+  </div>
+
 </ion-content>
