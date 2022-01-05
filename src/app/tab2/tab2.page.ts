@@ -23,7 +23,6 @@ export class Tab2Page implements OnInit {
 
   addReminder(a) {
     let now = new Date();
-    let today = formatDate(now, 'dd-MM-yyyy', 'en-US');
     let dd = String(now.getDate()).padStart(2, '0');
     let ddnum = parseInt(dd);
     let logo = "https://logo.clearbit.com/" + a.company
@@ -31,11 +30,12 @@ export class Tab2Page implements OnInit {
       name: a.name,
       company: a.company,
       logo: logo,
-      start_date: today,
+      start_date: formatDate(now, 'MM-dd-yyyy', 'en-US'),
       payment_date: ddnum,
       payment_frequency: a.payment_frequency,
       end_date: null,
-      cost: a.cost
+      cost: a.cost,
+      next_date: formatDate(now.setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
     });
     this.route.navigate(['/tabs/tab1']);
   }
