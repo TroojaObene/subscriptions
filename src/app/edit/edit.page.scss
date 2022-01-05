@@ -1,0 +1,39 @@
+.card_base {
+  width: 95%;
+}
+
+.card_date {
+  color: white;
+  text-align: right;
+  float: right;
+}
+
+.title_image {
+  border-radius: 10px;
+  float: left;
+}
+
+.actions {
+  float: right;
+  text-align: right;
+}
+
+.subs_name {
+  text-align: left;
+  float: left;
+  margin: 5%;
+}
+
+.date {
+  display: inline;
+  margin-top: 3%;
+}
+
+ion-datetime {
+  margin-left: 2.5%;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}

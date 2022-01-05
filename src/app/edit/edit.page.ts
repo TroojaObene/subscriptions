@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonDatetime } from '@ionic/angular';
+import { format, parseISO } from 'date-fns';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-edit',
@@ -8,6 +10,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,
   styleUrls: ['./edit.page.scss'],
 })
 export class EditPage implements OnInit {
+  @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
   param: string;
   Rem_id: string;
   sub
@@ -35,5 +38,10 @@ export class EditPage implements OnInit {
 
   delete() {
     this.router.navigate(['/tabs/delete/', this.Rem_id]);
+  }
+
+  formatDate(value: string) {
+    console.log("end ", format(parseISO(value), 'MM-dd-yyyy'))
+    return format(parseISO(value), 'MM-dd-yyyy');
   }
 }
