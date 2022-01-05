@@ -1,7 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-item>
-      <ion-title class="ion-text-center"> Add </ion-title>
+    <ion-item lines="none" style="display: inline;">
+      <ion-icon name="arrow-back" slot="start" (click)="back()"></ion-icon>
+      <ion-title class="ion-text-center" style="margin-right: 5%;"> Add </ion-title>
     </ion-item>
   </ion-toolbar>
 </ion-header>
@@ -10,33 +11,20 @@
 
 <ion-item>
   <ion-label position="floating">company webpage</ion-label>
-  <ion-textarea id="webpage"></ion-textarea>
+  <ion-textarea id="webpage" [(ngModel)]="page" required=true inputmode="url"></ion-textarea>
 </ion-item>
 
 <ion-item>
   <ion-label position="floating">company name</ion-label>
-  <ion-textarea id="type"></ion-textarea>
+  <ion-textarea id="type" [(ngModel)]="name" required=true></ion-textarea>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Cost</ion-label>
+  <ion-textarea id="cost" [(ngModel)]="cost" inputmode="decimal" required=true></ion-textarea>
 </ion-item>
 <br>
 <ion-button color="success" expand="block" shape="round" (click)="save()">
   <ion-icon slot="start" name="save"></ion-icon>
   Save
 </ion-button>
-
-<!--
-<script>
-  if(document.getElementById("save").clicked == true){
-
-  let webpage = getElementById("webpage");
-  let type= getElementById("type");
-  this.additionsService.addAdditions({
-    company: getElementById("webpage"),
-    name: getElementById("type").toUpperCase(),
-    payment_frequency: 1,
-    type: getElementById("type")
-  });
-  this.route.navigate(['/tabs/tab2/']);
-  };
-</script>
--->
 </ion-content>

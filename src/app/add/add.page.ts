@@ -8,23 +8,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./add.page.scss'],
 })
 export class AddPage implements OnInit {
+  name
+  page
+  cost
 
-  constructor(private additionsService: AdditionsService, private route: Router) { }
+  constructor(private additionsService: AdditionsService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  edit() {
+    this.router.navigate(['/tabs/tab2']);
+  }
 
-
-  save(_url: string, _type: string) {
+  save() {
     this.additionsService.addAdditions({
-      company: _url,
-      name: _url.toUpperCase(),
+      company: this.page,
+      name: this.name.toUpperCase(),
       payment_frequency: 1,
-      type: _type,
-      cost: 0
+      type: this.name,
+      cost: this.cost
     });
-    this.route.navigate(['/tabs/tab2/']);
+    this.router.navigate(['/tabs/tab2/']);
   }
 
 }
