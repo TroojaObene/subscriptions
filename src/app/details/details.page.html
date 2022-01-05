@@ -9,8 +9,8 @@
 
 <ion-content  [fullscreen]="true">
       <ion-card class="card_base">
-        <ion-card-content style="width: 100%; height: 100%;">
-          <ion-item lines="none"  style="width: 100%; height: 100%;">
+        <ion-card-content class="full">
+          <ion-item lines="none" class="full">
               <img src="{{single.logo}}" height="75" class="title_image">
               <ion-label class="subs_name">{{single.name}}</ion-label>
             <ion-item lines="none" class="actions">
@@ -29,6 +29,10 @@
             <ion-item lines="none" class="date">
               <ion-text> Next pay at: </ion-text>
               <ion-datetime value="{{single.next_date}}" readonly></ion-datetime>
+            </ion-item>
+            <ion-item lines="none" class="cost full">
+              <ion-text class="cost">Cost: {{single.cost}}€</ion-text>
+              <ion-text class="cost total">Total cost: {{single.total_cost}}€</ion-text>
             </ion-item>
         </ion-card-content>
       </ion-card>
