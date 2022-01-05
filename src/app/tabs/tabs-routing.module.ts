@@ -50,6 +50,10 @@ const routes: Routes = [
       {
         path: 'delete/:id',
         loadChildren: () => import('../delete/delete.module').then(m => m.DeletePageModule)
+      },
+      {
+        path: 'addition/:id',
+        loadChildren: () => import('../addition/addition.module').then(m => m.AdditionPageModule)
       }
     ]
   },
