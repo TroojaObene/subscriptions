@@ -9,22 +9,26 @@
 
 <ion-content  [fullscreen]="true">
       <ion-card class="card_base">
-        <ion-card-content>
-          <ion-item lines="none">
-            <ion-item lines="none" class="card_title">
+        <ion-card-content style="width: 100%; height: 100%;">
+          <ion-item lines="none"  style="width: 100%; height: 100%;">
               <img src="{{single.logo}}" height="75" class="title_image">
-            </ion-item>
-            <ion-item lines="none" class="subs_name">
-              <ion-label>{{single.name}}</ion-label>
-            </ion-item>
+              <ion-label class="subs_name">{{single.name}}</ion-label>
             <ion-item lines="none" class="actions">
-              <ion-icon name="pencil" (click)="edit()"></ion-icon>
-              <ion-icon name="trash" (click)="delete()" style="color: red;"></ion-icon>
+              <ion-item lines="full" (click)="edit()">
+                <ion-icon name="pencil"></ion-icon>
+              </ion-item>
+              <ion-item lines="full" (click)="delete()">
+                <ion-icon name="trash" style="color: red;"></ion-icon>
+              </ion-item>
             </ion-item>
           </ion-item>
             <ion-item lines="none" class="date">
               <ion-text> Subscribed at: </ion-text>
               <ion-datetime value="{{single.start_date}}" readonly></ion-datetime>
+            </ion-item>
+            <ion-item lines="none" class="date">
+              <ion-text> Next pay at: </ion-text>
+              <ion-datetime value="{{single.next_date}}" readonly></ion-datetime>
             </ion-item>
         </ion-card-content>
       </ion-card>

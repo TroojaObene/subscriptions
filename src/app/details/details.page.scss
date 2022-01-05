@@ -2,11 +2,6 @@
   width: 95%;
 }
 
-.card_title {
-  color: white;
-  float: left;
-}
-
 .card_date {
   color: white;
   text-align: right;
@@ -15,6 +10,7 @@
 
 .title_image {
   border-radius: 10px;
+  float: left;
 }
 
 .actions {
@@ -25,8 +21,14 @@
 .subs_name {
   text-align: left;
   float: left;
+  margin: 5%;
 }
 
 .date {
   display: inline;
+  margin-top: 3%;
+}
+
+ion-datetime {
+  margin-left: 2.5%;
 }
