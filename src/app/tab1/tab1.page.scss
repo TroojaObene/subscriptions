@@ -3,11 +3,6 @@
   display: flex;
 }
 
-.card_title {
-  color: white;
-  text-align: left;
-  float: left;
-}
 
 .card_date {
   color: white;
@@ -17,4 +12,10 @@
 
 .title_image {
   border-radius: 10px;
+  text-align: left;
+  float: left;
+}
+
+.cost {
+  float: right;
 }
