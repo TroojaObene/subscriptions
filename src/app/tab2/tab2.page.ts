@@ -19,26 +19,9 @@ export class Tab2Page implements OnInit {
   ngOnInit() {
     this.additions = this.additionsService.askAdditions();
   }
-
   addReminder(a) {
-    let now = new Date();
-    let dd = String(now.getDate()).padStart(2, '0');
-    let ddnum = parseInt(dd);
-    let logo = "https://logo.clearbit.com/" + a.company
-    this.remindersService.addReminders({
-      name: a.name,
-      company: a.company,
-      logo: logo,
-      start_date: formatDate(now, 'MM-dd-yyyy', 'en-US'),
-      payment_date: ddnum,
-      payment_frequency: a.payment_frequency,
-      end_date: null,
-      cost: a.cost,
-      next_date: formatDate(now.setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
-    });
-    this.route.navigate(['/tabs/tab1']);
+    this.route.navigate(['/tabs/tab2/' + a.id])
   }
-
   navAdd() {
     this.route.navigate(['/tabs/tab2/add/'])
   }
