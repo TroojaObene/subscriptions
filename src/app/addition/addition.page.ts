@@ -26,6 +26,10 @@ export class AdditionPage implements OnInit {
     this.sub = this.DocReference.valueChanges().subscribe(val => {
       this.data = val
     })
+
+    let now = new Date();
+    this.today = formatDate(now, 'yyyy-MM-dd', 'en-US')
+    console.log(this.today)
   }
 
   ngOnDestroy() {
@@ -38,18 +42,17 @@ export class AdditionPage implements OnInit {
     let dd = String(now.getDate()).padStart(2, '0');
     let ddnum = parseInt(dd);
     let logo = "https://logo.clearbit.com/" + a.company
-    this.today = formatDate(now, 'yyyy-MM-dd', 'en-US'),
-      this.remindersService.addReminders({
-        name: a.name,
-        company: a.company,
-        logo: logo,
-        start_date: formatDate(now, 'MM-dd-yyyy', 'en-US'),
-        payment_date: ddnum,
-        payment_frequency: a.payment_frequency,
-        end_date: null,
-        cost: a.cost,
-        next_date: formatDate(now.setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
-      });
+    this.remindersService.addReminders({
+      name: a.name,
+      company: a.company,
+      logo: logo,
+      start_date: formatDate(now, 'MM-dd-yyyy', 'en-US'),
+      payment_date: ddnum,
+      payment_frequency: a.payment_frequency,
+      end_date: null,
+      cost: a.cost,
+      next_date: formatDate(now.setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
+    });
     this.router.navigate(['/tabs/tab1']);
   }
 
