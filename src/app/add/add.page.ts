@@ -21,7 +21,8 @@ export class AddPage implements OnInit {
       company: _url,
       name: _url.toUpperCase(),
       payment_frequency: 1,
-      type: _type
+      type: _type,
+      cost: 0
     });
     this.route.navigate(['/tabs/tab2/']);
   }

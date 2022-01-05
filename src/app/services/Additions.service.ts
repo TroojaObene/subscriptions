@@ -8,7 +8,8 @@ export interface Additions {
   name: string,
   payment_frequency: number,
   company: string,
-  type: string
+  type: string,
+  cost: number
 }
 
 @Injectable({

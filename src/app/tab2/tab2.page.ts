@@ -35,7 +35,7 @@ export class Tab2Page implements OnInit {
       payment_date: ddnum,
       payment_frequency: a.payment_frequency,
       end_date: null,
-      cost: 0
+      cost: a.cost
     });
     this.route.navigate(['/tabs/tab1']);
   }
