@@ -38,7 +38,7 @@ export class AdditionPage implements OnInit {
     let dd = String(now.getDate()).padStart(2, '0');
     let ddnum = parseInt(dd);
     let logo = "https://logo.clearbit.com/" + a.company
-    this.today = formatDate(now, 'MM-dd-yyyy', 'en-US'),
+    this.today = formatDate(now, 'yyyy-MM-dd', 'en-US'),
       this.remindersService.addReminders({
         name: a.name,
         company: a.company,
