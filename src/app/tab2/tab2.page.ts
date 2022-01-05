@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class Tab2Page implements OnInit {
   public additions: Observable<Additions[]>
   public reminders: Observable<Reminders[]>
-  dd: number;
   constructor(private additionsService: AdditionsService, private remindersService: RemindersService, private route: Router) { }
 
 
