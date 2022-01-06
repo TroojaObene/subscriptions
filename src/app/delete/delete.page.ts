@@ -39,6 +39,7 @@ export class DeletePage implements OnInit {
   }
 
   delete() {
-    this.router.navigate(['/tabs/delete/', this.Rem_id]);
+    this.remindersService.removeReminder(this.Rem_id);
+    this.router.navigate(['/tabs/tab1/'])
   }
 }
