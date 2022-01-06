@@ -1,7 +1,10 @@
-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  text-align: center;
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container {
+  position: relative;
 }
