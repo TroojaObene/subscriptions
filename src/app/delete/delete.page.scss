@@ -1,10 +1,19 @@
-.center {
+.center_vert {
   margin: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
+.center_hori {
+  position: absolute;
+  left: 50%;
+}
+
 .container {
   position: relative;
+}
+
+.full_witdh {
+  width: 100%;
 }
