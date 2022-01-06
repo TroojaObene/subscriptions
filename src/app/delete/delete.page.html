@@ -12,5 +12,16 @@
     <ion-item class="full_witdh center_hori">
       <ion-label>Are you sure you want to delete <span>{{single.name}}</span>?</ion-label>
     </ion-item>
+
+      <div class="actions">
+    <ion-button color="medium" expand="block" shape="round" (click)="back()" class="back">
+      <ion-icon slot="start" name="arrow-undo"></ion-icon>
+      Back
+    </ion-button>
+    <ion-button color="danger" expand="block" shape="round" (click)="delete()" class="delete">
+      <ion-icon slot="start" name="trash"></ion-icon>
+      Delete
+    </ion-button>
+  </div>
   </div>
 </ion-content>
