@@ -19,14 +19,18 @@ export class EditPage implements OnInit {
   constructor(private route: ActivatedRoute, private afs: AngularFirestore, private router: Router) {
   }
   ngOnInit() {
-    this.single = {}
     this.Rem_id = this.route.snapshot.paramMap.get('id')
     console.log("Recive", this.Rem_id)
-    this.DocReference = this.afs.doc(`Reminders/${this.Rem_id}`)
+    this.single = this.get_data(this.Rem_id)
+  }
+
+  async get_data(id: string) {
+    this.DocReference = this.afs.doc(`Reminders/${id}`)
     this.sub = this.DocReference.valueChanges().subscribe(val => {
       this.single = val
     })
   }
+
 
   ngOnDestroy() {
     this.sub.unsubscribe()
