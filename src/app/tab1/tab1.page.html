@@ -15,6 +15,7 @@
               <img src="{{Reminder.logo}}" height="75" class="title_image">
             <ion-item lines="none">
               <ion-label>{{Reminder.name}}</ion-label>
+              <ion-datetime value="{{Reminder.next_date}}" readonly class="date"></ion-datetime>
             </ion-item>
             <ion-text class="cost">{{Reminder.cost}}€</ion-text>
         </ion-card-content>
