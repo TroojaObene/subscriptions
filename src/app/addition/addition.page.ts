@@ -45,7 +45,23 @@ export class AdditionPage implements OnInit {
     let now = new Date();
     let start_date_date = parseISO(this.date)
     let start_date = format(start_date_date, 'MM-dd-yyyy')
-    let dd = start_date_date.getDate()
+    let dd_old = start_date_date.getDate()
+    let mm_old = start_date_date.getMonth()
+    let yy_old = start_date_date.getFullYear()
+    let dd_now = now.getDate()
+    let mm_now = now.getMonth()
+    let yy_now = now.getFullYear()
+
+    //set next_date
+    let next_date = new Date()
+    next_date.setFullYear(yy_now)
+    next_date.setDate(dd_old)
+    if (dd_now > dd_old) {
+      next_date.setMonth(mm_now + 1)
+    } else {
+      next_date.setMonth(mm_now)
+    }
+
     let logo = "https://logo.clearbit.com/" + this.data.company
     this.remindersService.addReminders({
       name: this.name,
@@ -56,11 +72,11 @@ export class AdditionPage implements OnInit {
       payment_frequency: this.data.payment_frequency,
       end_date: null,
       cost: this.cost,
-      next_date: formatDate(parseISO(this.date).setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
+      next_date: formatDate(next_date, 'MM-dd-yyyy', 'en-US')
     });
     console.log("raw date: ", start_date_date)
     console.log("set date: ", start_date)
-    console.log("next date: ", formatDate(parseISO(this.date).setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US'))
+    console.log("next date: ", formatDate(next_date, 'MM-dd-yyyy', 'en-US'))
     this.router.navigate(['/tabs/tab1']);
   }
 
