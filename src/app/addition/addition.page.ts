@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { RemindersService } from 'src/app/services/Reminders.service';
 import { formatDate } from '@angular/common';
+import { format, parseISO } from 'date-fns';
 
 @Component({
   selector: 'app-addition',
@@ -16,6 +17,9 @@ export class AdditionPage implements OnInit {
   DocReference: AngularFirestoreDocument;
   today
 
+  name: string
+  cost: number
+  date: string
 
   constructor(private remindersService: RemindersService, private route: ActivatedRoute, private afs: AngularFirestore, private router: Router) { }
   ngOnInit() {
@@ -29,7 +33,7 @@ export class AdditionPage implements OnInit {
 
     let now = new Date();
     this.today = formatDate(now, 'yyyy-MM-dd', 'en-US')
-    console.log(this.today)
+    console.log("today: ", this.today)
   }
 
   ngOnDestroy() {
@@ -37,22 +41,26 @@ export class AdditionPage implements OnInit {
   }
 
   //save
-  save(a) {
+  save() {
     let now = new Date();
-    let dd = String(now.getDate()).padStart(2, '0');
-    let ddnum = parseInt(dd);
-    let logo = "https://logo.clearbit.com/" + a.company
+    let start_date_date = parseISO(this.date)
+    let start_date = format(start_date_date, 'MM-dd-yyyy')
+    let dd = start_date_date.getDate()
+    let logo = "https://logo.clearbit.com/" + this.data.company
     this.remindersService.addReminders({
-      name: a.name,
-      company: a.company,
+      name: this.name,
+      company: this.data.company,
       logo: logo,
-      start_date: formatDate(now, 'MM-dd-yyyy', 'en-US'),
-      payment_date: ddnum,
-      payment_frequency: a.payment_frequency,
+      start_date: start_date,
+      payment_date: parseInt(format(parseISO(this.date), 'dd')),
+      payment_frequency: this.data.payment_frequency,
       end_date: null,
-      cost: a.cost,
-      next_date: formatDate(now.setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
+      cost: this.cost,
+      next_date: formatDate(parseISO(this.date).setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US')
     });
+    console.log("raw date: ", start_date_date)
+    console.log("set date: ", start_date)
+    console.log("next date: ", formatDate(parseISO(this.date).setMonth(now.getMonth() + 1), 'MM-dd-yyyy', 'en-US'))
     this.router.navigate(['/tabs/tab1']);
   }
 
