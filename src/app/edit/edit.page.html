@@ -13,7 +13,7 @@
       <ion-item lines="none" class="full">
         <img src="{{single.logo}}" height="75" class="title_image">
             <ion-item class="subs_name">
-              <ion-textarea value="{{single.name}}" rows=1 [(ngModel)]="name"></ion-textarea>
+              <ion-textarea clear-on-edit=true value="{{single.name}}" rows=1 [(ngModel)]="name"></ion-textarea>
             </ion-item>
           <!--<ion-item lines="none" class="actions">
             <ion-item lines="full" (click)="delete()">
@@ -27,7 +27,7 @@
           </ion-item>
             <ion-item class="cost">
               <ion-label>Cost </ion-label>
-              <ion-textarea value="{{single.cost}}" rows=1 [(ngModel)]="cost"></ion-textarea>
+              <ion-textarea clear-on-edit=true value="{{single.cost}}" rows=1 [(ngModel)]="cost"></ion-textarea>
             </ion-item>
         </ion-card-content>
         <div class="actions">

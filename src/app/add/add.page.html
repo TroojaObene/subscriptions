@@ -11,16 +11,16 @@
 
 <ion-item>
   <ion-label position="floating">company webpage</ion-label>
-  <ion-textarea id="webpage" [(ngModel)]="page" required=true inputmode="url"></ion-textarea>
+  <ion-textarea clear-on-edit=true id="webpage" [(ngModel)]="page" required=true inputmode="url"></ion-textarea>
 </ion-item>
 
 <ion-item>
   <ion-label position="floating">company name</ion-label>
-  <ion-textarea id="type" [(ngModel)]="name" required=true></ion-textarea>
+  <ion-textarea clear-on-edit=true id="type" [(ngModel)]="name" required=true></ion-textarea>
 </ion-item>
 <ion-item>
   <ion-label position="floating">Cost</ion-label>
-  <ion-textarea id="cost" [(ngModel)]="cost" inputmode="decimal" required=true></ion-textarea>
+  <ion-textarea clear-on-edit=true id="cost" [(ngModel)]="cost" inputmode="decimal" required=true></ion-textarea>
 </ion-item>
 <br>
 <ion-button color="success" expand="block" shape="round" (click)="save()" type="submit">
