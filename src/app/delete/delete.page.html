@@ -9,11 +9,13 @@
 
 <ion-content  [fullscreen]="true" class="container">
   <div class="center_vert full_witdh">
+    <ion-card>
+      <br>
     <ion-item class="full_witdh center_hori">
       <ion-label>Are you sure you want to delete <span>{{single.name}}</span>?</ion-label>
     </ion-item>
-
-      <div class="actions">
+    <br>
+    <div class="actions">
     <ion-button color="medium" expand="block" shape="round" (click)="back()" class="back">
       <ion-icon slot="start" name="arrow-undo"></ion-icon>
       Back
@@ -23,5 +25,7 @@
       Delete
     </ion-button>
   </div>
+  <br>
+    </ion-card>
   </div>
 </ion-content>
