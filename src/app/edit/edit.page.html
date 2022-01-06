@@ -23,7 +23,7 @@
         </ion-item>
           <ion-item lines="none" class="date">
             <ion-text> Subscribed at: </ion-text>
-            <ion-datetime value="{{single.start_date}}" [(ngModel)]="date" max="{{today}}"></ion-datetime>
+            <ion-datetime [(ngModel)]="date" max="{{today}}"></ion-datetime>
           </ion-item>
             <ion-item class="cost">
               <ion-label>Cost </ion-label>
