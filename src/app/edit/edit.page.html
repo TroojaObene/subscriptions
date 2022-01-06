@@ -8,25 +8,31 @@
 </ion-header>
 
 <ion-content  [fullscreen]="true">
-      <ion-card class="card_base">
-        <ion-card-content class="full">
-          <ion-item lines="none" class="full">
-              <img src="{{single.logo}}" height="75" class="title_image">
-              <ion-label class="subs_name">{{single.name}}</ion-label>
-            <ion-item lines="none" class="actions">
-              <ion-item lines="full" (click)="delete()">
-                <ion-icon name="trash" style="color: red;"></ion-icon>
-              </ion-item>
+  <ion-card class="card_base">
+    <ion-card-content class="full">
+      <ion-item lines="none" class="full">
+        <img src="{{single.logo}}" height="75" class="title_image">
+        <ion-label class="subs_name">{{single.name}}</ion-label>
+          <ion-item lines="none" class="actions">
+            <ion-item lines="full" (click)="delete()">
+              <ion-icon name="trash" style="color: red;"></ion-icon>
             </ion-item>
           </ion-item>
-            <ion-item lines="none" class="date">
-              <ion-text> Subscribed at: </ion-text>
-              <ion-datetime value="{{single.start_date}}" #popoverDatetime2 presentation="date"   (ionChange)="dateValue2 = formatDate(popoverDatetime2.value)"></ion-datetime>
-            </ion-item>
+        </ion-item>
+          <ion-item lines="none" class="date">
+            <ion-text> Subscribed at: </ion-text>
+            <ion-datetime value="{{single.start_date}}" #popoverDatetime2 presentation="date"></ion-datetime>
+          </ion-item>
             <ion-item lines="none" class="cost full">
-              <ion-text class="cost">Cost: {{single.cost}}€</ion-text>
-            </ion-item>
+            <ion-text class="cost">Cost: {{single.cost}}€</ion-text>
+          </ion-item>
         </ion-card-content>
+        <div class="actions">
+          <ion-button color="success" expand="block" shape="round" (click)="save()" class="save">
+            <ion-icon slot="start" name="save"></ion-icon>
+            Save
+          </ion-button>
+        </div>
       </ion-card>
 </ion-content>
 
