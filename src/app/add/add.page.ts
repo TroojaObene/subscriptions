@@ -32,4 +32,8 @@ export class AddPage implements OnInit {
     this.router.navigate(['/tabs/tab2/']);
   }
 
+  back() {
+    this.router.navigate(['/tabs/tab2']);
+  }
+
 }

@@ -20,7 +20,7 @@ export class Tab1Page implements OnInit {
   }
 
   getDetails(reminder) {
-    this.route.navigate(['/tabs/details/', reminder]);
+    this.route.navigate(['/tabs/details/', reminder.id]);
     console.log("send", reminder)
   }
 

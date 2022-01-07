@@ -11,7 +11,7 @@
   <ion-list>
     <ion-item lines="none" *ngFor="let Reminder of reminders |  async">
       <ion-card class="card_base">
-        <ion-card-content (click)="getDetails(Reminder.id)" style="width: 100%; height: 100%;">
+        <ion-card-content (click)="getDetails(Reminder)" style="width: 100%; height: 100%;">
               <img src="{{Reminder.logo}}" height="75" class="title_image">
             <ion-item lines="none">
               <ion-label>{{Reminder.name}}</ion-label>
