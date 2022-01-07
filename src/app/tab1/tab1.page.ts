@@ -28,7 +28,7 @@ export class Tab1Page implements OnInit {
 
   getDetails(reminder) {
     this.route.navigate(['/tabs/details/', reminder.id]);
-    console.log("send", reminder)
+    console.log("send", reminder.id)
   }
 
   async nextDate(data) {
