@@ -3,7 +3,7 @@ import { RemindersService, Reminders } from 'src/app/services/Reminders.service'
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { format } from 'date-fns';
+import { format, getDate } from 'date-fns';
 
 @Component({
   selector: 'app-tab1',
@@ -46,11 +46,7 @@ export class Tab1Page implements OnInit {
     let next_date_date = new Date()
     next_date_date.setFullYear(yy_now)
     next_date_date.setDate(dd_old)
-    if (dd_now > dd_old) {
-      next_date_date.setMonth(mm_now + 1)
-    } else {
-      next_date_date.setMonth(mm_now)
-    }
+    if (dd_now > dd_old) { next_date_date.setMonth(mm_now + 1) } else { next_date_date.setMonth(mm_now) }
 
     let new_next_date = format(next_date_date, 'MM-dd-yyyy')
 
