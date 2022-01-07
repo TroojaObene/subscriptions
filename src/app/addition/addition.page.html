@@ -11,12 +11,12 @@
 
   <ion-item>
     <ion-label position="floating">Name</ion-label>
-    <ion-textarea clear-on-edit=true [(ngModel)]="name" inputmode="text" value="{{data.name}}" required=true></ion-textarea>
+    <ion-textarea [(ngModel)]="name" inputmode="text" value="{{data.name}}" required=true></ion-textarea>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Cost</ion-label>
-    <ion-textarea clear-on-edit=true [(ngModel)]="cost" inputmode="decimal" value="{{data.cost}}" required=true></ion-textarea>
+    <ion-textarea [(ngModel)]="cost" inputmode="decimal" value="{{data.cost}}" required=true></ion-textarea>
   </ion-item>
 
   <ion-item>
