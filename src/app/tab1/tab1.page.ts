@@ -36,6 +36,7 @@ export class Tab1Page implements OnInit {
     let next_date_old = data.next_date
     let dd_old = data.payment_date
     let dd_now = new Date().getDay()
+    dd_now = dd_now + 2
     let mm_now = new Date().getMonth()
     let yy_now = new Date().getFullYear()
 
