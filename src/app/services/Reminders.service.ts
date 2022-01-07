@@ -13,7 +13,7 @@ export interface Reminders {
   end_date: number,
   cost: number,
   next_date: string,
-  raw_start_date:Date
+  raw_start_date: Date
 }
 
 @Injectable({
