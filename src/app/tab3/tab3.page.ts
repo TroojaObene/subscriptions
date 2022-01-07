@@ -8,4 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class Tab3Page implements OnInit {
   constructor() { }
   ngOnInit() { }
+
+  Git() {
+    window.open("//github.com/TroojaObene/subscriptions")
+  }
 }
