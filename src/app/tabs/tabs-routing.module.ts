@@ -35,10 +35,6 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'info',
-        loadChildren: () => import('../info/info.module').then(m => m.InfoPageModule)
-      },
-      {
         path: 'edit/:id',
         loadChildren: () => import('../edit/edit.module').then(m => m.EditPageModule)
       },

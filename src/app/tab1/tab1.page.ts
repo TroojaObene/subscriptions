@@ -23,7 +23,7 @@ export class Tab1Page implements OnInit {
   }
 
   navInfo() {
-    this.route.navigate(['/tabs/info']);
+    this.route.navigate(['/tabs/tab3']);
   }
 
   getDetails(reminder) {
