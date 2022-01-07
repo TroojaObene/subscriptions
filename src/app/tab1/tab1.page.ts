@@ -40,9 +40,9 @@ export class Tab1Page implements OnInit {
     let mm_now = new Date().getMonth()
     let yy_now = new Date().getFullYear()
 
-    console.log("")
-    console.log(data.name, " at ", next_date_old)
-    console.log("old: ", dd_old, " now: ", dd_now)
+    //console.log("")
+    //console.log(data.name, " at ", next_date_old)
+    //console.log("old: ", dd_old, " now: ", dd_now)
 
     let next_date_date = new Date()
     next_date_date.setFullYear(yy_now)
@@ -51,12 +51,12 @@ export class Tab1Page implements OnInit {
 
     let new_next_date = format(next_date_date, 'MM-dd-yyyy')
 
-    console.log("Today date ", Date())
-    console.log("Today ", format(new Date(), 'MM-dd-yyyy'))
-    console.log("Older ", next_date_old)
-    console.log("Calc: ", format(next_date_date, 'MM-dd-yyyy'))
-    if (dd_now > dd_old) { console.log("Date bigger: true") } else { console.log("Date bigger: false") }
-    if (next_date_old === new_next_date) { console.log("Date equal: true") } else { console.log("Date equal: false") }
+    //console.log("Today date ", Date())
+    //console.log("Today ", format(new Date(), 'MM-dd-yyyy'))
+    //console.log("Older ", next_date_old)
+    //console.log("Calc: ", format(next_date_date, 'MM-dd-yyyy'))
+    //if (dd_now > dd_old) { console.log("Date bigger: true") } else { console.log("Date bigger: false") }
+    //if (next_date_old === new_next_date) { console.log("Date equal: true") } else { console.log("Date equal: false") }
 
     if (next_date_old === new_next_date) { } else {
       this.firebase.collection('Reminders').doc(id).update({ next_date: new_next_date })
