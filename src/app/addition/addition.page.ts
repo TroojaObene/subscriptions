@@ -25,7 +25,7 @@ export class AdditionPage implements OnInit {
   ngOnInit() {
     this.data = {}
     this.Rem_id = this.route.snapshot.paramMap.get('id')
-    console.log("Recive", this.Rem_id)
+    //console.log("Recive", this.Rem_id)
     this.DocReference = this.afs.doc(`Additions/${this.Rem_id}`)
     this.sub = this.DocReference.valueChanges().subscribe(val => {
       this.data = val
@@ -33,7 +33,7 @@ export class AdditionPage implements OnInit {
 
     let now = new Date();
     this.today = formatDate(now, 'yyyy-MM-dd', 'en-US')
-    console.log("today: ", this.today)
+    //console.log("today: ", this.today)
   }
 
   ngOnDestroy() {
@@ -89,9 +89,9 @@ export class AdditionPage implements OnInit {
       next_date: formatDate(next_date, 'MM-dd-yyyy', 'en-US'),
       raw_start_date: start_date_date
     });
-    console.log("raw date: ", start_date_date)
-    console.log("set date: ", start_date)
-    console.log("next date: ", formatDate(next_date, 'MM-dd-yyyy', 'en-US'))
+    //console.log("raw date: ", start_date_date)
+    //console.log("set date: ", start_date)
+    //console.log("next date: ", formatDate(next_date, 'MM-dd-yyyy', 'en-US'))
     this.router.navigate(['/tabs/tab1']);
   }
 

@@ -26,7 +26,7 @@ export class EditPage implements OnInit {
   }
   ngOnInit() {
     this.Rem_id = this.route.snapshot.paramMap.get('id')
-    console.log("Recive", this.Rem_id)
+    //console.log("Recive", this.Rem_id)
     this.single = this.get_data(this.Rem_id)
     let now = new Date();
     this.today = formatDate(now, 'yyyy-MM-dd', 'en-US')

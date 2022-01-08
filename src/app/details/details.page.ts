@@ -19,7 +19,7 @@ export class DetailsPage implements OnInit {
   constructor(private route: ActivatedRoute, private afs: AngularFirestore, private router: Router) { }
   ngOnInit() {
     this.Rem_id = this.route.snapshot.paramMap.get('id')
-    console.log("Recive", this.Rem_id)
+    //console.log("Recive", this.Rem_id)
     this.single = this.get_data(this.Rem_id)
   }
 
