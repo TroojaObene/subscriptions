@@ -27,7 +27,7 @@ export class AddPage implements OnInit {
       name: this.name.toUpperCase(),
       payment_frequency: 1,
       type: this.name,
-      cost: this.cost
+      cost: parseFloat(this.cost)
     });
     this.router.navigate(['/tabs/tab2/']);
   }

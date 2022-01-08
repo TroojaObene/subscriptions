@@ -11,19 +11,19 @@
 
 <ion-item>
   <ion-label position="floating">company webpage</ion-label>
-  <ion-textarea id="webpage" [(ngModel)]="page" required=true inputmode="url"></ion-textarea>
+  <ion-textarea id="webpage" [(ngModel)]="page" required=true inputmode="url" onkeyup="if(this.value.length > 0) document.getElementById('save_button').disabled = false; else document.getElementById('save_button').disabled = true;"></ion-textarea>
 </ion-item>
 
 <ion-item>
   <ion-label position="floating">company name</ion-label>
-  <ion-textarea id="type" [(ngModel)]="name" required=true></ion-textarea>
+  <ion-textarea id="type" [(ngModel)]="name" required=true onkeyup="if(this.value.length > 0) document.getElementById('save_button').disabled = false; else document.getElementById('save_button').disabled = true;"></ion-textarea>
 </ion-item>
 <ion-item>
   <ion-label position="floating">Cost</ion-label>
-  <ion-textarea id="cost" [(ngModel)]="cost" inputmode="decimal" required=true></ion-textarea>
+  <ion-textarea id="cost" [(ngModel)]="cost" inputmode="decimal" required=true onkeyup="if(this.value.length > 0) document.getElementById('save_button').disabled = false; else document.getElementById('save_button').disabled = true;"></ion-textarea>
 </ion-item>
 <br>
-<ion-button color="success" expand="block" shape="round" (click)="save()" type="submit">
+<ion-button color="success" expand="block" shape="round" (click)="save()" type="submit" id="save_button" disabled>
   <ion-icon slot="start" name="save"></ion-icon>
   Save
 </ion-button>
