@@ -16,11 +16,11 @@
 
 <ion-item>
   <ion-label position="floating">company name</ion-label>
-  <ion-textarea id="type" [(ngModel)]="name" required=true onkeyup="if(this.value.length > 0) document.getElementById('save_button').disabled = false; else document.getElementById('save_button').disabled = true;"></ion-textarea>
+  <ion-textarea id="type" [(ngModel)]="name"></ion-textarea>
 </ion-item>
 <ion-item>
   <ion-label position="floating">Cost</ion-label>
-  <ion-textarea id="cost" [(ngModel)]="cost" inputmode="decimal" required=true onkeyup="if(this.value.length > 0) document.getElementById('save_button').disabled = false; else document.getElementById('save_button').disabled = true;"></ion-textarea>
+  <ion-textarea id="cost" [(ngModel)]="cost" inputmode="decimal"></ion-textarea>
 </ion-item>
 <br>
 <ion-button color="success" expand="block" shape="round" (click)="save()" type="submit" id="save_button" disabled>

@@ -22,12 +22,16 @@ export class AddPage implements OnInit {
   }
 
   save() {
+    const cost = this.cost === undefined ? 0 : parseFloat(this.cost)
+    //const page = this.page === undefined ? this.page : this.page
+    const name = this.name === undefined ? this.page : this.name
+
     this.additionsService.addAdditions({
       company: this.page,
-      name: this.name.toUpperCase(),
+      name: name.toUpperCase(),
       payment_frequency: 1,
-      type: this.name,
-      cost: parseFloat(this.cost)
+      type: name,
+      cost: cost
     });
     this.router.navigate(['/tabs/tab2/']);
   }
