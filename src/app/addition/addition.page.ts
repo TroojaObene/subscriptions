@@ -52,6 +52,17 @@ export class AdditionPage implements OnInit {
     let mm_now = now.getMonth()
     let yy_now = now.getFullYear()
 
+    //console.log("Now: ", now, " now type: ", typeof (now))
+    //console.log("input: ", this.date, " input type: ", typeof (this.date))
+    //console.log("Formated: ", start_date_date, " format type: ", typeof (start_date_date))
+
+    //console.log("dd_old", dd_old, " type of dd_old", typeof (dd_old))
+    //console.log("mm_old", mm_old, " type of mm_old", typeof (mm_old))
+    //console.log("yy_old", yy_old, " type of yy_old", typeof (yy_old))
+    //console.log("dd_now", dd_now, " type of dd_now", typeof (dd_now))
+    //console.log("mm_now", mm_now, " type of mm_now", typeof (mm_now))
+    //console.log("yy_now", yy_now, " type of yy_now", typeof (yy_now))
+
     //set next_date
     let next_date = new Date()
     next_date.setFullYear(yy_now)
