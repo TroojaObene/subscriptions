@@ -53,11 +53,14 @@ export class EditPage implements OnInit {
   }
 
   save() {
-    console.log("name: ", this.name)
-    console.log("cost: ", this.cost)
-    console.log("date: ", this.date)
+    //console.log("name: ", this.name)
+    //console.log("cost: ", this.cost)
+    //console.log("date: ", this.date)
     let now = new Date();
-    let start_date_date = parseISO(this.date)
+    const start_date_date = this.date === undefined ? new Date() : parseISO(this.date)
+    const name = this.name === undefined ? this.single.name : this.name
+    const cost = this.cost === undefined ? this.single.cost : this.cost
+
     let start_date = format(start_date_date, 'MM-dd-yyyy')
     let dd_old = start_date_date.getDate()
     let mm_old = start_date_date.getMonth()
@@ -77,22 +80,21 @@ export class EditPage implements OnInit {
     }
 
     let logo = "https://logo.clearbit.com/" + this.single.company
-    const reminder =
-      this.remindersService.updateFullReminder(this.Rem_id, {
-        name: this.name,
-        company: this.single.company,
-        logo: logo,
-        start_date: start_date,
-        payment_date: parseInt(format(parseISO(this.date), 'dd')),
-        payment_frequency: this.single.payment_frequency,
-        end_date: null,
-        cost: this.cost,
-        next_date: formatDate(next_date, 'MM-dd-yyyy', 'en-US'),
-        raw_start_date: start_date_date
-      });
-    console.log("raw date: ", start_date_date)
-    console.log("set date: ", start_date)
-    console.log("next date: ", formatDate(next_date, 'MM-dd-yyyy', 'en-US'))
+    this.remindersService.updateFullReminder(this.Rem_id, {
+      name: name,
+      company: this.single.company,
+      logo: logo,
+      start_date: start_date,
+      payment_date: dd_old,
+      payment_frequency: this.single.payment_frequency,
+      end_date: null,
+      cost: cost,
+      next_date: formatDate(next_date, 'MM-dd-yyyy', 'en-US'),
+      raw_start_date: start_date_date
+    });
+    //console.log("raw date: ", start_date_date)
+    //console.log("set date: ", start_date)
+    //console.log("next date: ", formatDate(next_date, 'MM-dd-yyyy', 'en-US'))
     this.router.navigate(['/tabs/tab1']);
   }
 }
