@@ -9,14 +9,28 @@
 
 <ion-content [fullscreen]="true">
 
+    <ion-item>
+    <ion-card class="card_base">
+        <ion-card-content style="width: 100%; height: 100%;">
+              <img src="https://logo.clearbit.com/{{data.company}}" alt="{{data.company}}" height="75" class="title_image">
+            <ion-item lines="none">
+              <ion-label>{{this.name}}</ion-label>
+            </ion-item>
+            <ion-text class="type">{{data.type}}</ion-text>
+            <ion-text class="cost">{{this.cost}}€</ion-text>
+        </ion-card-content>
+      </ion-card>
+  </ion-item>
+
+
   <ion-item>
     <ion-label position="floating">Name</ion-label>
-    <ion-textarea [(ngModel)]="name" inputmode="text" value="{{data.name}}" required=true></ion-textarea>
+    <ion-textarea [(ngModel)]="name" inputmode="text" required=true></ion-textarea>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Cost</ion-label>
-    <ion-textarea [(ngModel)]="cost" inputmode="decimal" value="{{data.cost}}" required=true></ion-textarea>
+    <ion-textarea [(ngModel)]="cost" inputmode="decimal" required=true></ion-textarea>
   </ion-item>
 
   <ion-item>
@@ -29,10 +43,16 @@
       <ion-icon slot="start" name="arrow-undo"></ion-icon>
       Back
     </ion-button>
-    <ion-button color="success" expand="block" shape="round" (click)="save()" class="save"  type="submit">
+    <ion-button color="success" expand="block" shape="round" (click)="save()" class="save"  type="submit" id="save_button">
       <ion-icon slot="start" name="save"></ion-icon>
       Add
     </ion-button>
   </div>
 
 </ion-content>
+
+<!--
+value="{{data.name}}"
+value="{{data.cost}}"
+value="{{today}}"
+-->

@@ -13,3 +13,22 @@
   margin: 10px;
   margin-right: 20px;
 }
+
+.card_base {
+  width: 95%;
+  display: flex;
+}
+
+.title_image {
+  border-radius: 10px;
+  text-align: left;
+  float: left;
+}
+
+.cost {
+  float: right;
+}
+
+.type {
+  margin-left: 3%;
+}
