@@ -88,7 +88,7 @@ export class EditPage implements OnInit {
       payment_date: dd_old,
       payment_frequency: this.single.payment_frequency,
       end_date: null,
-      cost: cost,
+      cost: parseFloat(cost),
       next_date: formatDate(next_date, 'MM-dd-yyyy', 'en-US'),
       raw_start_date: start_date_date
     });
