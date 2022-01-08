@@ -43,7 +43,10 @@ export class AdditionPage implements OnInit {
   //save
   save() {
     let now = new Date();
-    let start_date_date = parseISO(this.date)
+    const start_date_date = this.date === undefined ? new Date() : parseISO(this.date)
+    const name = this.name === undefined ? this.data.name : this.name
+    const cost = this.cost === undefined ? this.data.cost : this.cost
+
     let start_date = format(start_date_date, 'MM-dd-yyyy')
     let dd_old = start_date_date.getDate()
     let mm_old = start_date_date.getMonth()
@@ -75,14 +78,14 @@ export class AdditionPage implements OnInit {
 
     let logo = "https://logo.clearbit.com/" + this.data.company
     this.remindersService.addReminders({
-      name: this.name,
+      name: name,
       company: this.data.company,
       logo: logo,
       start_date: start_date,
-      payment_date: parseInt(format(parseISO(this.date), 'dd')),
+      payment_date: dd_old,
       payment_frequency: this.data.payment_frequency,
       end_date: null,
-      cost: this.cost,
+      cost: cost,
       next_date: formatDate(next_date, 'MM-dd-yyyy', 'en-US'),
       raw_start_date: start_date_date
     });
